@@ -12,9 +12,12 @@
 
 // console.log(result);
 
-let a = 10, b = 3;
-let result = `${a} + ${b} is ${a + b < 10 ? 'less than 10' : 'greater than 10'}`;
+let a = 10,
+  b = 3;
+let result = `${a} + ${b} is ${
+  a + b < 10 ? "less than 10" : "greater than 10"
+}`;
 
 console.log(result);
 
-// The += adds the values to an existing string. In th original code it attaches 'less than 10' or 'greater than 10' to the result string. 
+// The += adds the values to an existing string. In th original code it attaches 'less than 10' or 'greater than 10' to the result string.
