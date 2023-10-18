@@ -27,11 +27,12 @@ const basketballGame = {
     return this; // part a: added 'return this' to enable chain
   },
   foul() {
-    this.fouls ++;
+    this.fouls++;
     return this; // part c: added method to track fouls
   },
 
-  halfTimeFouls() { // part c: added method to increment fouls
+  halfTimeFouls() {
+    // part c: added method to increment fouls
     console.log("The Halftime foul count is " + this.fouls++);
     return this;
   },
@@ -40,17 +41,17 @@ const basketballGame = {
     console.log("Halftime score is " + this.score);
     return this;
   },
-  fullTime() {  // part b: added new method to print full time score
+  fullTime() {
+    // part b: added new method to print full time score
     console.log("Fulltime final score is " + this.score);
     return this;
   },
 
-  fullTimeFouls() { // part c: added method to increment fouls
+  fullTimeFouls() {
+    // part c: added method to increment fouls
     console.log("The Fulltime foul count is " + this.fouls++);
     return this;
   },
-
-
 };
 //modify each of the above object methods to enable function chaining as below:
 basketballGame
@@ -76,4 +77,3 @@ basketballGame
   .freeThrow()
   .fullTime()
   .fullTimeFouls();
- 

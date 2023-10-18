@@ -3,21 +3,21 @@
 // syntax. Test each version to make sure they work the same.
 
 function getGreeting(name) {
-return 'Hello ' + name + '!';
+  return "Hello " + name + "!";
 }
 
-console.log(getGreeting('Jason'));
+console.log(getGreeting("Jason"));
 
 // Function expression syntax
-const getGreetingExp = function(name) {
-    return 'Hello ' + name + '!';
-}
+const getGreetingExp = function (name) {
+  return "Hello " + name + "!";
+};
 
-console.log(getGreetingExp('Jason'));
+console.log(getGreetingExp("Jason"));
 
 // Arrow function syntax
 const getGreetingArrow = (name) => {
-    return 'Hello ' + name + '!';
-}
+  return "Hello " + name + "!";
+};
 
-console.log(getGreetingArrow('Jason'));
+console.log(getGreetingArrow("Jason"));
