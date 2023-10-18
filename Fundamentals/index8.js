@@ -14,6 +14,7 @@ const sydney = {
     timezone: 'Australia/Sydney'
     };
 
+// a) Write a function that takes an object as an argument and uses a for...in loop to access
 function printObject(object) {
     for (const key in object) {
     console.log(`${key}: ${object[key]}`)
@@ -22,6 +23,7 @@ function printObject(object) {
 
 printObject(sydney);
 
+// b) Create a new object for a different city with different properties and call your function
 const newyork = {
     name: 'New York',
     population: 8419600,
