@@ -9,9 +9,9 @@
 // e) Change the way the moreSports and cat2 variables are created to ensure the
 // originals remain independent
 
-let teamSports = ['Hockey', 'Cricket', 'Volleyball'];
-let dog1 = 'Bingo';
-let cat1 = { name: 'Fluffy', breed: 'Siberian' };
+let teamSports = ["Hockey", "Cricket", "Volleyball"];
+let dog1 = "Bingo";
+let cat1 = { name: "Fluffy", breed: "Siberian" };
 
 // a) Create a new moreSports variable equal to teamSports and add new sport
 // let moreSports = teamSports;
@@ -31,17 +31,17 @@ let cat1 = { name: 'Fluffy', breed: 'Siberian' };
 // console.log(dog1);
 // console.log(cat1);
 
-// dog1 has not changed because we are creating a new string with the same value.  
+// dog1 has not changed because we are creating a new string with the same value.
 // cat1 has changed because we modified the object it points to.
 
 // e) Change the way the moreSports and cat2 variables are created to ensure the originals remain independent
 let moreSports = [...teamSports];
-moreSports.push('Baseball');
-moreSports.unshift('Football');
+moreSports.push("Baseball");
+moreSports.unshift("Football");
 
 let cat2 = { ...cat1 };
-cat2.name = 'Garth';
-cat2.breed = 'Persian';
+cat2.name = "Garth";
+cat2.breed = "Persian";
 
 console.log(teamSports);
 console.log(cat1);
