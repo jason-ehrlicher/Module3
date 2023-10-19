@@ -33,11 +33,17 @@ class PersonClass {
     this.name = name;
     this.age = age;
     this.human = true;
-    this.canDrive = this.age >= 16; // Add a canDrive method
   }
-}
+  canDrive() {  // d) Add a canDrive method
+      const canDriveStatement = this.age >= 16 ? 'can' : 'cannot';
+      return `${this.name} is ${this.age} years old and ${canDriveStatement} drive.`;
+    }
+  }
 
 // create a third person & print
 let person3 = new PersonClass("Charlie", 33);
+let person4 = new PersonClass("Molly", 15);
 
 console.log(person3);
+console.log(person3.canDrive());
+console.log(person4.canDrive());
