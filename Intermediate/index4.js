@@ -62,24 +62,32 @@ console.log("For...of loop function: ", camelCase("display"));
 
 //for loop without conditional operator
 function camelCase(cssProp) {
-    let result = '';
-    let capitalizeNext = false;
-    for (let i = 0; i < cssProp.length; i++) {
-        if (cssProp[i] === '-') {
-            capitalizeNext = true;
-        } else {
-            if (capitalizeNext) {
-                result += cssProp[i].toUpperCase();
-                capitalizeNext = false;
-            } else {
-                result += cssProp[i];
-            }
-            }
-        }
-    return result;
+  let result = "";
+  let capitalizeNext = false;
+  for (let i = 0; i < cssProp.length; i++) {
+    if (cssProp[i] === "-") {
+      capitalizeNext = true;
+    } else {
+      if (capitalizeNext) {
+        result += cssProp[i].toUpperCase();
+        capitalizeNext = false;
+      } else {
+        result += cssProp[i];
+      }
     }
+  }
+  return result;
+}
 
-console.log("For loop w/o conditional operator function: ", camelCase("margin-left"));
-console.log("For loop w/o conditional operator function: ", camelCase("background-image"));
-console.log("For loop w/o conditional operator function: ", camelCase("display"));
-
+console.log(
+  "For loop w/o conditional operator function: ",
+  camelCase("margin-left")
+);
+console.log(
+  "For loop w/o conditional operator function: ",
+  camelCase("background-image")
+);
+console.log(
+  "For loop w/o conditional operator function: ",
+  camelCase("display")
+);
