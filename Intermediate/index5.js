@@ -95,7 +95,7 @@ console.log(
 );
 console.log(
   "Currency Operation Result:  ",
-  currencyOperation(fixedTen, fixedTwenty, "/")
+  currencyOperation(tenCents, twentyCents, "/")
 );
 
 console.log(0.3 == currencyAddition(0.1, 0.2));
