@@ -13,20 +13,65 @@
 // //run 'npm install node-fetch'
 // //add this line to package.json after line 5: "type": "module",
 
+// import fetch from "node-fetch";
+// globalThis.fetch = fetch;
+// function fetchURLData(url) {
+//   let fetchPromise = fetch(url).then((response) => {
+//     if (response.status === 200) {
+//       return response.json();
+//     } else {
+//       throw new Error(`Request failed with status ${response.status}`);
+//     }
+//   });
+//   return fetchPromise;
+// }
+// fetchURLData("https://jsonplaceholder.typicode.com/todos/1")
+//   .then((data) => console.log(data))
+//   .catch((error) => console.error(error.message));
 
-import fetch from 'node-fetch'
-globalThis.fetch = fetch
-function fetchURLData(url) {
-let fetchPromise = fetch(url).then(response => {
-if (response.status === 200) {
-return response.json();
-} else {
-throw new Error(`Request failed with status ${response.status}`);
+// a) Write a new version using async / await
+
+import fetch from "node-fetch";
+globalThis.fetch = fetch;
+
+async function fetchURLDataAsync(url) {
+  try {
+    const response = await fetch(url);
+    if (response.status === 200) {
+      return await response.json();
+    } else {
+      throw new Error(`Request failed with status ${response.status}`);
+    }
+  } catch (error) {
+    console.error(`An error occurred: `, error.message);
+  }
 }
 
-});
-return fetchPromise;
+// // testing with a valid URL
+// fetchURLDataAsync("https://jsonplaceholder.typicode.com/todos/1")
+//   .then((data) => console.log(data))
+//   .catch((error) => console.error(error));
+
+// // testing with invalid url
+// fetchURLDataAsync("https://fakeurl.typicode.com/todos/1")
+//   .then((data) => console.log(data))
+//   .catch((error) => console.error(error));
+
+async function fetchMultipleURLDataAsync(urls) {
+  try {
+    const promises = urls.map((url) => fetchURLDataAsync(url));
+    return await Promise.all(promises);
+  } catch (error) {
+    console.error(`An error occurred: `, error.message);
+  }
 }
-fetchURLData('https://jsonplaceholder.typicode.com/todos/1')
-.then(data => console.log(data))
-.catch(error => console.error(error.message));
+
+fetchMultipleURLDataAsync([
+  "https://jsonplaceholder.typicode.com/todos/1",
+  "https://jsonplaceholder.typicode.com/todos/2",
+  "https://thisurldoesnotexist.typicode.com/todos/3",
+])
+  .then((results) => {
+    console.log(results);
+  })
+  .catch((error) => console.error(error));
