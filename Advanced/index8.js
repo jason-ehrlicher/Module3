@@ -62,9 +62,9 @@ class AlarmClock extends DigitalClock {   // create AlarmClock that inherits Dig
     display() {
     super.display();
     let date = new Date();
-    let [hours, mins, secs] = [date.getHours(), date.getMinutes()]
+    let [hours, mins, secs] = [date.getHours(), date.getMinutes(), date.getSeconds()]
     .map(num => num < 10 ? '0' + num : num.toString());
-    let currentTime = `${hours}:${mins}`;
+    let currentTime = `${hours}:${mins}` + (this.wakeupTime.length === 5 ? '' : `:${secs}`);
     if (currentTime === this.wakeupTime) {
         console.log('Wake Up!');
         this.stop();
@@ -72,5 +72,5 @@ class AlarmClock extends DigitalClock {   // create AlarmClock that inherits Dig
 }
 }
 
-const alarmClock = new AlarmClock('Alarm Clock: ', "14:57")
+const alarmClock = new AlarmClock('Alarm Clock: ', "16:13")
 alarmClock.start()
